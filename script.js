@@ -156,7 +156,6 @@ function showItems(){
 
 
     for(let i= 0; i < chart.length; i++){
-        console.log(chart.length)
         let productImg = document.createElement('img')
         let productName = document.createElement('h2') 
         let productPrice = document.createElement('h2')
@@ -211,7 +210,10 @@ function getProductsFromStorage(){
 
 function clearChart(){
     localStorage.clear()
-    chart.forEach(products => chart.pop())
+    for(let i = 0; i <= chart.length + 1; i++) {
+        chart.pop()
+    }
+    
     totalItensInChart = 0
     chartPrice = 0
     let chartLenght = document.querySelector('.chartLength')
