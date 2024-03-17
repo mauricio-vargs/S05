@@ -209,3 +209,15 @@ function getProductsFromStorage(){
 
 }
 
+function clearChart(){
+    localStorage.clear()
+    chart.forEach(products => chart.pop())
+    totalItensInChart = 0
+    chartPrice = 0
+    let chartLenght = document.querySelector('.chartLength')
+    chartLenght.textContent = `Quantidade de itens no carrinho: ${totalItensInChart}`
+    let totalPrice = document.querySelector('.totalChart')
+    totalPrice.textContent = `Valor total do carrinho: R$ ${chartPrice.toFixed(2)}` 
+    
+}
+
